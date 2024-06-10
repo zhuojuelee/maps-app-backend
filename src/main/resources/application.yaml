@@ -1,3 +1,8 @@
 spring:
   application:
     name: maps
+
+logging:
+  file:
+    path: /temp/logs
+    name: maps-app.log

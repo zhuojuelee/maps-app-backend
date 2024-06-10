@@ -15,8 +15,8 @@ public class FavouritePlace {
   @Id
   private String placeId;
   private String name;
-  private Double lat;
-  private Double lng;
+  private Float lat;
+  private Float lng;
 
   public FavouritePlace() {
   }
