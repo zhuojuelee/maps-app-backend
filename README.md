@@ -22,7 +22,7 @@ SPRING_DOCKER_PORT=8080
 Run the following commands
 ```bin\bash
 mvn install
-docker-compose up
+docker-compose up --build
 ```
 
 ## Postman
