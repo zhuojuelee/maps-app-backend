@@ -24,3 +24,6 @@ Run the following commands
 mvn install
 docker-compose up
 ```
+
+## Postman
+Import the collection in `docs/maps-app-backend.postman_collection.json`
