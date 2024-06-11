@@ -2,7 +2,9 @@ package com.example.maps.controller;
 
 import java.util.Optional;
 
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/favourites")
 public class FavouritesController {
 
@@ -55,7 +58,7 @@ public class FavouritesController {
     return ResponseEntity.ok().body(favouritePlacesService.getPlaceWeather(placeId));
   }
 
-  @PostMapping
+  @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<FavouritePlace> addNewFavouritePlace(@RequestBody FavouritePlace place) {
     log.info("[Controller] Received a request to save {}", place.toString());
     return ResponseEntity.ok().body(favouritePlacesService.saveFavouritePlace(place));
